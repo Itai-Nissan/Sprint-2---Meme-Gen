@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/image-gallery.css">
+    <link rel="stylesheet" href="css/meme.css">
+    <link rel="stylesheet" href="css/css-vars.css">
+    <title>Meme Gen</title>
+</head>
+
+<body onload="init()">
+    <header class="header">
+        <div class="logo">MemeGen</div>
+        <nav class="nav-bar">
+            <a href="#">Gallery</a>
+            <a href="#">Memes</a>
+            <a href="#">About</a>
+        </nav>
+    </header>
+
+    <section class="search-gallery">
+        <input oninput="onSearchText(this.value)" class="searchText" type="text" data-trans="input-text"
+            placeholder="Enter Search" />
+        <div class="keywordsBtns">
+            <button onclick="onRateKeywords(this)">funny</button>
+            <button onclick="onReKeywords(this)">comics</button>
+            <button onclick="onReKeywords(this)">dog</button>
+        </div>
+    </section>
+    </section>
+    <section class="gallery">
+        <section class="image-gallery"></section>
+    </section>
+
+    <main>
+        <section class="meme-editor">
+            <section class="canvas-container" hidden>
+                <canvas class="my-canvas" width="600px" height="300px"></canvas>
+                <input type="text" class="canvas-text" hidden />
+                <button class="set-line" onclick="onSetLineTxt()">Insert Text</button>
+                <div class="chosen-image"></div>
+
+    </main>
+
+
+    <footer>
+        <div class="logo">MemeGen</div>
+        <div class="rights">all rights reserved 2019</div>
+    </footer>
+
+
+
+    <script src="js/services/images.js"></script>
+    <script src="js/utilities/utilities.js"></script>
+    <script src="js/services/touch-events.js"></script>
+    <script src="js/services/canvas.js"></script>
+    <script src="js/services/meme.js"></script>
+    <script src="js/services/meme.service.js"></script>
+    <script src="js/controller.js"></script>
+</body>
+
+</html>

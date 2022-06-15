@@ -1,0 +1,48 @@
+.image-gallery {
+    width: 600px;
+    /* height: 300px; */
+
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /* gap: 5%; */
+}
+
+.image-gallery div{
+    height: 139px;
+    width: 176.5px;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+}
+
+.search-gallery{
+    height: 51px;
+    display: flex;
+    align-items: center;
+}
+
+.search-gallery input{
+    margin-inline-start: 3%;
+}
+
+.search-gallery button{
+    background-color: white;
+    border: 0px;
+}
+
+.search-gallery .keywordsBtns{
+    margin-inline-start: 40%;
+
+}
+
+canvas{
+    display: none;
+    /* width: 600px;
+    height: 466px; */
+    background-color: rgb(10, 10, 10, 0.1);
+}
+

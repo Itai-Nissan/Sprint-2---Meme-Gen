@@ -1,0 +1,14 @@
+.canvas-text {
+    position: absolute;
+    /* left:50vw; */
+    /* top:50px; */
+    /* width:300px; */
+}
+
+.set-line {
+    position: absolute;
+    left: 48vw;
+    top: 100px;
+    height: 20px;
+    /* width: 50px; */
+}

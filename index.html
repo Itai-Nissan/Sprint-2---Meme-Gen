@@ -16,7 +16,7 @@
     <header class="header">
         <div class="logo">MemeGen</div>
         <nav class="nav-bar">
-            <a href="#">Gallery</a>
+            <a href="#" onclick="init()">Gallery</a>
             <a href="#">Memes</a>
             <a href="#">About</a>
         </nav>
@@ -40,9 +40,39 @@
         <section class="meme-editor">
             <section class="canvas-container" hidden>
                 <canvas class="my-canvas" width="600px" height="300px"></canvas>
-                <input type="text" class="canvas-text" hidden />
-                <button class="set-line" onclick="onSetLineTxt()">Insert Text</button>
+                <section class="meme-container">
+                    <div class="meme-panel">
+                        <div class="user-text">
+                            <!-- TEXT -->
+                            <input type="text" class="canvas-text" onfocus="this.value" hidden />
+                            <button class="set-line" onclick="onSetLineTxt()">Set Text</button>
+                        </div>
+                        <div class="second-line">
+                            <!-- LINE FOCUS -->
+                            <button class="line-focus" onclick="onLineFocus()"><img
+                                    src="images/icons/up-and-down-opposite-double-arrows-side-by-side.png"></button>
+                            <button onclick="onDeleteText()"><img src="images/icons/trash.png" alt=""></button>
+                            
+                        </div>
+                        <!-- FONT -->
+                        <div class="meme-font">
+                            <button class="increase-font" onclick="onIcreaseFont()"><img
+                                    src="images/icons/increase font - icon.png"></button>
+                            <button class="decrease-font" onclick="onDecreaseFont()"><img
+                                    src="images/icons/decrease font - icon.png"></button>
+                        </div>
+                        <!-- COLOR -->
+                        <label class="user-color" for="user-color"><img
+                                src="images/icons/paint-board-and-brush.png"></label>
+                        <input hidden type="color" id="user-color" name="user-color" value="#ff0000">
+                    </div>
+                </section>
+
+                <!-- MEME IMAGE -->
                 <div class="chosen-image"></div>
+
+
+
 
     </main>
 
@@ -54,13 +84,14 @@
 
 
 
-    <script src="js/services/images.js"></script>
     <script src="js/utilities/utilities.js"></script>
     <script src="js/services/touch-events.js"></script>
     <script src="js/services/canvas.js"></script>
-    <script src="js/services/meme.js"></script>
     <script src="js/services/meme.service.js"></script>
-    <script src="js/controller.js"></script>
+    <script src="js/services/gallery.service.js"></script>
+    <script src="js/meme.controller.js"></script>
+    <script src="js/gallery.controller.js"></script>
+    <script src="js/main.controller.js"></script>
 </body>
 
 </html>

@@ -87,7 +87,7 @@ function renderCanvas() {
     // if(!gMeme.textOne) return
     // console.log(gMeme.selectedLineId);
     if (gMeme.selectedLineId === 1) {
-        gCtx.fillText(gMeme.textOne, 100, 30)
+        gCtx.fillText(gMeme.textOne, 100, 45)
     }
     if (gMeme.selectedLineId === 2) {
         gCtx.fillText(gMeme.textTwo, 100, 280)

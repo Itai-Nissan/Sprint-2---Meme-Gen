@@ -27,14 +27,14 @@ function onIcreaseFont() {
     console.log(gFontSize);
     // console.log(gUserFont);
     gFontSize += 4
-    gUserFont = '' + gFontSize + 'px Arial' + ''
+    gUserFont = '' + gFontSize + 'px Impact' + ''
 }
 
 function onDecreaseFont() {
     console.log(gFontSize);
     // console.log(gUserFont);
     gFontSize -= 4
-    gUserFont = '' + gFontSize + 'px Arial' + ''
+    gUserFont = '' + gFontSize + 'px Impact' + ''
 }
 
 function onLineFocus() {

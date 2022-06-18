@@ -1,6 +1,6 @@
 var gMeme = {
-    textOne: '',
-    textTwo: '',
+    textOne: 'One does not simply write js',
+    textTwo: 'May the force be with you',
     selectedImgId: 1,
     selectedLineId: 1
 }

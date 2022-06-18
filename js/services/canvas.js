@@ -38,8 +38,8 @@ function renderCanvas() {
   // }
   // gCtx.stroke();
 
-  gCtx.fillText(gMeme.textOne, 300 - (gMeme.textOne.length * 10), 45)
-  gCtx.fillText(gMeme.textTwo, 300 - (gMeme.textTwo.length * 10), 550)
+  gCtx.fillText(gMeme.textOne, 300 - (gMeme.textOne.length * 5), 45)
+  gCtx.fillText(gMeme.textTwo, 300 - (gMeme.textTwo.length * 5), 550)
 
 }
 

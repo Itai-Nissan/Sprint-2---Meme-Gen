@@ -12,14 +12,6 @@
     /* grid-template-rows: repeat(3, 1fr); */
 }
 
-.grid-gallery div {
-    display: flex;
-    flex-wrap: wrap;
-    width: 33.333%;
-
-    padding: 6px;
-}
-
 .gallery-img {
     /* position: relative; */
     /* max-width: 375px; */

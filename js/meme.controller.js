@@ -3,8 +3,8 @@ var gUserColor
 // var gCurrLine = 1
 
 var gFontSize = 30
-var gUserFont = '' + gFontSize + 'px Arial' + ''
-var gUserFont2 = "30px Arial";
+var gUserFont = '' + gFontSize + 'px Impact' + ''
+var gUserFont2 = "30px Impcat";
 
 
 function renderMeme(imgId) {

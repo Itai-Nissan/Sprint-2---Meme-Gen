@@ -1,14 +1,11 @@
-/* Eurofurencer */
+/* Montserrat-Regular */
 @font-face {
     font-family: Montserrat-Regular;
     src: url("../fonts/Montserrat/Montserrat-Regular.ttf");
 }
 
-/* Font Awsome */
+/* Montserrat-Thin */
 @font-face {
     font-family: Montserrat-Thin;
     src: url("../fonts/Montserrat/Montserrat-Thin.ttf");
 }
-
-/* Lato */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');

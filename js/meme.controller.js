@@ -76,14 +76,9 @@ function onSetLineTxt() {
 }
 
 function onDeleteText() {
-    // console.log(gCtx);
-    // gCtx.fillText('', 100, 30)
-    // gCtx.fillText('', 100, 280)
-    // gCtx.fillText('', gCanvas.width, gCanvas.height)
-    if (gMeme.selectedLineId === 1) gMeme.textOne = ' '
-    if (gMeme.selectedLineId === 2) gMeme.textTwo = ' '
+    if (gMeme.selectedLineId === 1) gMeme.textOne = ''
+    if (gMeme.selectedLineId === 2) gMeme.textTwo = ''
     renderCanvas()
-
 }
 
 // var gLineOne

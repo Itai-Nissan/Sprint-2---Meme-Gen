@@ -49,6 +49,7 @@ var gImgs = [
 ]
 
 function renderGallery() {
+    // const image = getImages()
     const image = gImgs
     const strHTML = image.map((image) => {
         return `
@@ -62,3 +63,4 @@ function renderGallery() {
     const elGallery = document.querySelector('.grid-gallery');
     elGallery.innerHTML = strHTML.join('');
 }
+

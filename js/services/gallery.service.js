@@ -9,10 +9,6 @@ function getImgById(imgId) {
 function toggleGallery(isShow) {
     const elGallery = document.querySelector('.gallery')
     elGallery.style.display = isShow ? 'block' : 'none'
-
-    // const elSearch = document.querySelector('.search-gallery')
-    // elSearch.style.display = 'none'
-
 }
 
 function toggleMenu() {

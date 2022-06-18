@@ -17,8 +17,6 @@ function resizeCanvas() {
   gElCanvas.height = elContainer.offsetHeight
 }
 
-
-
 function renderCanvas() {
   if (!gCtx) return
   clearCanvas()
@@ -31,6 +29,14 @@ function renderCanvas() {
 
   gCtx.font = gUserFont
 
+  // if(gMeme.textOne){
+  //   gCtx.rect(250 - (gMeme.textOne.length * 10), 20, 250, (gMeme.textOne.length * 10));
+  //   // gCtx.stroke();
+  // }
+  // if(gMeme.textTwo){
+  //   gCtx.rect(250 - (gMeme.textTwo.length * 10), 525, 250, (gMeme.textTwo.length * 10));
+  // }
+  // gCtx.stroke();
 
   gCtx.fillText(gMeme.textOne, 300 - (gMeme.textOne.length * 10), 45)
   gCtx.fillText(gMeme.textTwo, 300 - (gMeme.textTwo.length * 10), 550)

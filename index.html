@@ -17,8 +17,8 @@
 
 <body onload="init()">
     <div class="page-container">
-        
-        
+
+
         <div class="main-screen" onclick="toggleMenu()"></div>
         <header class="header">
             <div class="logo head-logo"><img src="images/meme-gene-logo.png" alt="MemeGen"></div>
@@ -32,11 +32,18 @@
 
 
 
+
         <main>
             <section class="gallery page-container">
                 <section class="search-gallery">
-                    <input oninput="onSearchText(this.value)" class="searchText" type="text" data-trans="input-text"
-                        placeholder="Enter Search" />
+                    <section class="img-filter">
+                        <h2 data-trans="filter"></h2>
+                        <section class="filter-header">
+                            <input onchange="onSetFilterBy(this.value)" class="searchText" type="text"
+                                placeholder="Enter Search">
+                        </section>
+                    </section>
+
                     <div class="keywordsBtns">
                         <button class="funny" onclick="onRateKeywords(this)">funny</button>
                         <button class="comics" onclick="onRateKeywords(this)">comics</button>
@@ -46,7 +53,6 @@
                         <a href="#">more...</a>
                     </div>
                 </section>
-
                 <section class="grid-gallery"></section>
             </section>
             <section class="meme-page page-container">
@@ -67,7 +73,6 @@
                         <button class="set-line" onclick="onSetLineTxt()"><img src="images/icons/add.png"
                                 alt="Set Text"></button>
                         <button onclick="onDeleteText()"><img src="images/icons/trash.png" alt=""></button>
-
                     </div>
                     <!-- FONT -->
                     <div class="meme-font">

@@ -6,81 +6,94 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/typography.css">
     <link rel="stylesheet" href="css/image-gallery.css">
+    <link rel="stylesheet" href="css/mq.css">
+    <link rel="stylesheet" href="css/screen.css">
     <link rel="stylesheet" href="css/meme.css">
     <link rel="stylesheet" href="css/css-vars.css">
     <title>Meme Gen</title>
 </head>
 
 <body onload="init()">
-    <header class="header">
-        <div class="logo">MemeGen</div>
-        <nav class="nav-bar">
-            <a href="#" onclick="init()">Gallery</a>
-            <a href="#">Memes</a>
-            <a href="#">About</a>
-        </nav>
-    </header>
+    <div class="page-container">
+        
+        
+        <div class="main-screen" onclick="toggleMenu()"></div>
+        <header class="header">
+            <div class="logo head-logo"><img src="images/meme-gene-logo.png" alt="MemeGen"></div>
+            <ul class="nav-bar clean-list">
+                <li href="#" onclick="init()">Gallery</li>
+                <li href="#">Memes</li>
+                <li href="#">About</li>
+            </ul>
+            <button onclick="toggleMenu()" class="menu-toggle">☰</button>
+        </header>
 
-    <section class="search-gallery">
-        <input oninput="onSearchText(this.value)" class="searchText" type="text" data-trans="input-text"
-            placeholder="Enter Search" />
-        <div class="keywordsBtns">
-            <button onclick="onRateKeywords(this)">funny</button>
-            <button onclick="onReKeywords(this)">comics</button>
-            <button onclick="onReKeywords(this)">dog</button>
-        </div>
-    </section>
-    </section>
-    <section class="gallery">
-        <section class="image-gallery"></section>
-    </section>
 
-    <main>
-        <section class="meme-editor">
-            <section class="canvas-container" hidden>
-                <canvas class="my-canvas" width="600px" height="300px"></canvas>
-                <section class="meme-container">
-                    <div class="meme-panel">
-                        <div class="user-text">
-                            <!-- TEXT -->
-                            <input type="text" class="canvas-text" onfocus="this.value" hidden />
-                            <button class="set-line" onclick="onSetLineTxt()">Set Text</button>
-                        </div>
-                        <div class="second-line">
-                            <!-- LINE FOCUS -->
-                            <button class="line-focus" onclick="onLineFocus()"><img
-                                    src="images/icons/up-and-down-opposite-double-arrows-side-by-side.png"></button>
-                            <button onclick="onDeleteText()"><img src="images/icons/trash.png" alt=""></button>
-                            
-                        </div>
-                        <!-- FONT -->
-                        <div class="meme-font">
-                            <button class="increase-font" onclick="onIcreaseFont()"><img
-                                    src="images/icons/increase font - icon.png"></button>
-                            <button class="decrease-font" onclick="onDecreaseFont()"><img
-                                    src="images/icons/decrease font - icon.png"></button>
-                        </div>
-                        <!-- COLOR -->
-                        <label class="user-color" for="user-color"><img
-                                src="images/icons/paint-board-and-brush.png"></label>
-                        <input hidden type="color" id="user-color" name="user-color" value="#ff0000">
+
+        <main>
+            <section class="gallery page-container">
+                <section class="search-gallery">
+                    <input oninput="onSearchText(this.value)" class="searchText" type="text" data-trans="input-text"
+                        placeholder="Enter Search" />
+                    <div class="keywordsBtns">
+                        <button class="funny" onclick="onRateKeywords(this)">funny</button>
+                        <button class="comics" onclick="onRateKeywords(this)">comics</button>
+                        <button class="dog" onclick="onRateKeywords(this)">dog</button>
+                        <button class="drinks" onclick="onRateKeywords(this)">drinks</button>
+                        <button class="books" onclick="onRateKeywords(this)">books</button>
+                        <a href="#">more...</a>
                     </div>
                 </section>
 
+                <section class="grid-gallery"></section>
+            </section>
+            <section class="meme-page page-container">
+                <div class="canvas-container" hidden>
+                    <canvas class="my-canvas" width="600px" height="600px"></canvas>
+                </div>
+
+                <!-- <section class="meme-container"> -->
+                <div class="meme-panel">
+                    <div class="user-text">
+                        <!-- TEXT -->
+                        <input type="text" class="canvas-text" onfocus="this.value" hidden />
+                    </div>
+                    <div class="second-line">
+                        <!-- LINE FOCUS -->
+                        <button class="line-focus" onclick="onLineFocus()"><img
+                                src="images/icons/up-and-down-opposite-double-arrows-side-by-side.png"></button>
+                        <button class="set-line" onclick="onSetLineTxt()"><img src="images/icons/add.png"
+                                alt="Set Text"></button>
+                        <button onclick="onDeleteText()"><img src="images/icons/trash.png" alt=""></button>
+
+                    </div>
+                    <!-- FONT -->
+                    <div class="meme-font">
+                        <button class="increase-font" onclick="onIcreaseFont()"><img
+                                src="images/icons/increase font - icon.png"></button>
+                        <button class="decrease-font" onclick="onDecreaseFont()"><img
+                                src="images/icons/decrease font - icon.png"></button>
+                    </div>
+                    <!-- COLOR -->
+                    <label class="user-color" for="user-color"><img
+                            src="images/icons/paint-board-and-brush.png"></label>
+                    <input hidden type="color" id="user-color" name="user-color" value="#000000">
+                </div>
+                <!-- </section> -->
+
                 <!-- MEME IMAGE -->
                 <div class="chosen-image"></div>
+        </main>
 
-
-
-
-    </main>
-
-
-    <footer>
-        <div class="logo">MemeGen</div>
-        <div class="rights">all rights reserved 2019</div>
-    </footer>
+        <footer>
+            <div class="footer-container">
+                <div class="logo footer-logo"><img src="images/meme-gene-logo.png" alt="MemeGen"></div>
+                <div class="rights">all rights reserved 2019</div>
+            </div>
+        </footer>
+    </div>
 
 
 

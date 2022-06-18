@@ -3,66 +3,87 @@
 }
 
 body {
-    margin: 10vh auto 0;
+    margin: 0 auto;
     padding: 0;
-    width: 600px;
-    /* border-inline: 1px solid rgb(0, 0, 0, 0.3);; */
-    border: 1px solid rgb(0, 0, 0, 0.3);
+    font-family: Montserrat-Regular;
 }
 
-.logo {
-    color: aliceblue;
+.clean-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
+
+.page-container {
+    display: block;
+    margin: 0 auto;
+
+    /* height: 100vh; */
+    width: 1200px;
+    border: 1px solid rgba(0, 0, 0, 0.142);
+
+}
+
 
 .header {
     display: flex;
     align-items: center;
-    height: 33px;
+    justify-content: space-between;
+    height: 50px;
     /* width: 600px; */
     background-color: #ff7f00;
+    /* margin-top: 60px; */
 
 }
 
-.header .logo {
-    /* width: 66.5px; */
-    height: 11px;
-    margin-inline-start: 24.5px;
+.logo img {
+    height: 22px;
+    width: 133px;
 }
 
-.header .nav-bar {
-    margin-inline-start: 50%;
+.head-logo {
+    margin-inline-start: 85px;
 }
 
-.nav-bar a {
-    width: 22.8px;
-    height: 36.7px;
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    margin-inline-end: 60px;
+}
+
+.nav-bar li {
     color: aliceblue;
     text-decoration: none;
-
-
     margin-left: 16px;
+    cursor: pointer;
 }
 
-footer {
-    height: 103.5px;
-    text-align: center;
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
+.keywordsBtns {
+    display: flex;
+}
+
+.keywordsBtns button {
+    color: rgb(11, 11, 11);
+    background-color: transparent;
+    font-size: 20px;
+}
+
+.search-gallery a{
+    color: black;
+}
+
+
+.footer-container {
+    height: 200px;
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: #ff7f00;
 }
 
-footer .logo {
-    margin-block-end: 50px;
-    /* text-align: center; */
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-items: center; */
-
+.footer-container .rights {
+    font-family: Montserrat-Thin;
+    color: white;
 }
-
-/* .canvas-container{
-    position:relative;
-    width:600px;
-    height:300px;
-} */

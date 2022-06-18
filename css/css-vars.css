@@ -1,14 +1,14 @@
-/* :root {
-	--clr1: #58c93a;
-	--clr2: #292929;
+:root {
+	/* --clr1: #58c93a; */
+	/* --clr2: #292929; */
 
-	--clr-card-header: #4f4e4e;
-	--clr-card-text: #606060;
-	--clr-page-nav: #818181;
-	--clr-link-txt: #939292;
-	--clr-footer-txt: #a6a6a6;
-	--clr-btn: #c2c2c2;
-	--clr-content-border: #e1e0e0;
-	--clr-link-bg: #e5e5e5;
-	--clr-footer-bg: #f8f8f8;
-} */
+	--backgournd: #e3e3e3;
+	/* --clr-card-text: #606060; */
+	/* --clr-page-nav: #818181; */
+	/* --clr-link-txt: #939292; */
+	/* --clr-footer-txt: #a6a6a6; */
+	/* --clr-btn: #c2c2c2; */
+	/* --clr-content-border: #e1e0e0; */
+	/* --clr-link-bg: #e5e5e5; */
+	/* --clr-footer-bg: #f8f8f8; */
+}

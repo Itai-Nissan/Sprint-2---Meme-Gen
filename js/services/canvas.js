@@ -19,3 +19,23 @@ function resizeCanvas() {
 
 
 
+function renderCanvas() {
+  if (!gCtx) return
+  clearCanvas()
+
+  var elImg = document.getElementById(gMeme.selectedImgId)
+  gCtx.drawImage(elImg, 0, 0, gCanvas.width, gCanvas.height)
+
+  gUserColor = document.getElementById('user-color').value
+  gCtx.fillStyle = gUserColor
+
+  gCtx.font = gUserFont
+
+
+  gCtx.fillText(gMeme.textOne, 300 - (gMeme.textOne.length * 10), 45)
+  gCtx.fillText(gMeme.textTwo, 300 - (gMeme.textTwo.length * 10), 550)
+
+}
+
+
+

@@ -1,17 +1,17 @@
 var gCurrImgId
+var gUserColor
 // var gCurrLine = 1
 
 var gFontSize = 30
 var gUserFont = '' + gFontSize + 'px Arial' + ''
 var gUserFont2 = "30px Arial";
 
-var gUserColor
 
 function renderMeme(imgId) {
     // gCurrImgId = imgId
     // var elImg = document.getElementById(imgId)
     // gCtx.drawImage(elImg, 0, 10, 270, 275.5)    
-    
+
 }
 
 // function handleEnter(e) {
@@ -23,84 +23,88 @@ function renderMeme(imgId) {
 //     }
 // }
 
-function onIcreaseFont(){
+function onIcreaseFont() {
     console.log(gFontSize);
     // console.log(gUserFont);
     gFontSize += 4
-    gUserFont = '' + gFontSize + 'px Arial' + ''    
+    gUserFont = '' + gFontSize + 'px Arial' + ''
 }
 
-function onDecreaseFont(){
+function onDecreaseFont() {
     console.log(gFontSize);
     // console.log(gUserFont);
     gFontSize -= 4
-    gUserFont = '' + gFontSize + 'px Arial' + ''    
+    gUserFont = '' + gFontSize + 'px Arial' + ''
 }
 
-function onLineFocus(){
+function onLineFocus() {
     console.log(gMeme.selectedLineId)
     // gCurrLine = gMeme.selectedLineId
-    if(gMeme.selectedLineId === 1){
+    if (gMeme.selectedLineId === 1) {
         gMeme.selectedLineId = 2
         console.log(gMeme.selectedLineId);
         return
     }
-    if(gMeme.selectedLineId === 2){
+    if (gMeme.selectedLineId === 2) {
         gMeme.selectedLineId = 1
         console.log(gMeme.selectedLineId);
         return
     }
+    renderCanvas()
 }
 
 function onSetLineTxt() {
     const btn = document.querySelector('.set-line')
 
-    btn.addEventListener('click', function handleClick(event) {
-        // 👇️ if you are submitting a form (prevents page reload)
-        event.preventDefault()
+    // btn.addEventListener('click', function handleClick(event) {
+    //     // 👇️ if you are submitting a form (prevents page reload)
+    //     event.preventDefault()
 
-        const canvasText = document.querySelector('.canvas-text')
+    //     const canvasText = document.querySelector('.canvas-text')
 
-        // Send value to server
-        console.log(canvasText.value)
+    //     // Send value to server
+    //     console.log(canvasText.value)
 
-        // 👇️ clear input field
-        canvasText.value = ''
-    })
-    
+    //     // 👇️ clear input field
+    //     canvasText.value = ''
+    // })
+
     var userText = getUserText()
-    
+
     renderCanvas()
     // renderMeme()
 }
 
-function onDeleteText(){
+function onDeleteText() {
     // console.log(gCtx);
     // gCtx.fillText('', 100, 30)
     // gCtx.fillText('', 100, 280)
     // gCtx.fillText('', gCanvas.width, gCanvas.height)
-    if(gMeme.selectedLineId === 1) gMeme.textOne = ' '
-    if(gMeme.selectedLineId === 2) gMeme.textTwo = ' '
+    if (gMeme.selectedLineId === 1) gMeme.textOne = ' '
+    if (gMeme.selectedLineId === 2) gMeme.textTwo = ' '
     renderCanvas()
 
 }
 
-var gLineOne
-var gLineTwo
+// var gLineOne
+// var gLineTwo
 
-function createLines(pos) {
-    gLineOne = {
-        pos: (100, 30),
-        text: gMeme.textOne,
-        size: 60,
-        color: 'blue',
-        isDrag: false
-    }
-    gLineTwo = {
-        pos: (100, 280),
-        text: gMeme.textTwo,
-        size: 60,
-        color: 'blue',
-        isDrag: false
-    }
-}
+// var lineOnePos = (300 - (gMeme.textOne.length * 10), 45)
+// var lineTwoPos = (300 - (gMeme.textTwo.length * 10), 550)
+
+// // function createLines(pos) {
+//     gLineOne = {
+//         pos: lineOnePos,
+//         text: gMeme.textOne,
+//         size: 60,
+//         color: 'blue',
+//         isDrag: false
+//     }
+//     gLineTwo = {
+//         pos: lineTwoPos,
+//         text: gMeme.textTwo,
+//         size: 60,
+//         color: 'blue',
+//         isDrag: false
+//     }
+// // }

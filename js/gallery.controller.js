@@ -59,6 +59,6 @@ function renderGallery() {
         `
     }
     )
-    const elGallery = document.querySelector('.image-gallery');
+    const elGallery = document.querySelector('.grid-gallery');
     elGallery.innerHTML = strHTML.join('');
 }

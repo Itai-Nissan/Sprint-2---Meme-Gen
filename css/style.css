@@ -24,16 +24,12 @@ body {
 
 }
 
-
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 50px;
-    /* width: 600px; */
+    height: 60px;
     background-color: #ff7f00;
-    /* margin-top: 60px; */
-
 }
 
 .logo img {
@@ -51,6 +47,10 @@ body {
     margin-inline-end: 60px;
 }
 
+.btn{
+    cursor: pointer;
+}
+
 .nav-bar li {
     color: aliceblue;
     text-decoration: none;
@@ -60,6 +60,7 @@ body {
 
 .keywordsBtns {
     display: flex;
+    margin-inline-end: 50px;
 }
 
 .keywordsBtns button {

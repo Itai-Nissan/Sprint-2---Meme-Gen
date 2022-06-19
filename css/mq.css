@@ -28,8 +28,8 @@
         flex-wrap: nowrap;
         width: 100%;
         padding: 0 0 6px;
-
     }
+
     .menu-toggle {
         margin-inline-end: 60px;
 
@@ -117,7 +117,7 @@
         display: flex;
         flex-wrap: wrap;
         width: 33.333%;
-    
+
         padding: 0 0;
     }
 }
@@ -138,8 +138,14 @@
         align-items: center;
         margin-inline-start: 30px;
         /* margin-block-end: 16px; */
-
     }
+
+    .meme-font{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
 
     .canvas-container {
         margin: 0px;
@@ -183,6 +189,10 @@
         align-items: center;
     }
 
+    .meme-font {
+        display: flex;
+    }
+
     .head-logo {
         margin-inline-end: 385px;
     }
@@ -195,7 +205,7 @@
     .grid-gallery div {
         display: flex;
         flex-wrap: wrap;
-        width: 33.333%;
+        width: 25%;
 
         padding: 6px;
     }

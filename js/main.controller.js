@@ -15,15 +15,10 @@ function init() {
 
     gCanvas = document.querySelector('canvas')
     gCtx = gCanvas.getContext('2d')
-    // elInput = document.querySelector('.insert-text')
-    // elSearchInput = document.querySelector('.insert-search')
     renderGallery()
 
     // addListeners()
     // renderCanvas()
-
-
-
     // addMouseListeners()
     // addTouchListeners()
 }
@@ -34,6 +29,7 @@ function onImgSelect(imgId) {
     setImg(imgId)
     // renderMeme(imgId)
     renderCanvas(imgId)
+    
 }
 
 function resizeCanvas() {

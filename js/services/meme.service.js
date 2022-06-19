@@ -1,17 +1,3 @@
-var gMeme = {
-    textOne: 'One does not simply write js',
-    textTwo: 'May the force be with you',
-    selectedImgId: 1,
-    selectedLineId: 1
-}
-
-var lines = [
-    {
-        textUp: 'Wanna bet?',
-        textDown: 'Yep'
-    }
-]
-
 function getMemes() {
     return gMeme;
 }
@@ -28,12 +14,16 @@ function toggleEditor(isShow) {
     const elCanvas = document.querySelector('.my-canvas')
     elCanvas.style.display = isShow ? 'block' : 'none'
 
+    const elsaved = document.querySelector('.saved')
+    elsaved.style.display = isShow ? 'flex' : 'none'
+
     var elCanvasContainer = document.querySelector('.canvas-container')
-    elCanvasContainer.style.display = 'block'
+    elCanvasContainer.style.display = isShow ? 'block' : 'none'
 
     var elSetTxt = document.querySelector('.canvas-text');
-    elSetTxt.style.display = 'block'
+    elSetTxt.style.display = isShow ? 'block' : 'none'
 }
+
 
 function getUserText() {
     var elSetTxt = document.querySelector('.canvas-text');
@@ -52,4 +42,10 @@ function getUserText() {
     console.log(gMeme);
     return gMeme
 }
+
+function removeMenu(){
+    document.body.classList.toggle('menu-open');
+    init()
+}
+
 

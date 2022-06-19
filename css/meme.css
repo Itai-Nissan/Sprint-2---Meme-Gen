@@ -2,6 +2,54 @@
     background-color: var(--backgournd);
 }
 
+.colors{
+    display: flex;
+    align-items: end;
+}
+
+.saved{
+    height: 60px;
+    display: flex;
+    align-self: center;
+    align-items: center;
+}
+
+.saved button{
+    border: none;
+    background-color: white;
+    height: 40px;
+    border-radius: 10px 10px 10px 10px;
+    margin-inline-end: 6px;
+    margin-inline-start: 6px;
+    font-family: Montserrat-Regular;
+}
+
+.saved button:hover{
+    background-color: #ff80009a;
+}
+
+.search-text{
+    background: url(/images/icons/search-icon.png) no-repeat scroll 7px 7px;
+    background-size: 8%;
+    padding-left:30px;
+}
+
+.meme-font{
+    display: flex;
+    justify-content: center;
+}
+
+.meme-panel .font{
+    border: none;
+    border-radius: 10px 10px 10px 10px;
+    align-items: center;
+    height: 60px;
+}
+
+.meme-panel .font:hover{
+        background-color: #ff80009a;
+}
+
 .meme-panel button {
     height: 60px;
     width: 60px;
@@ -10,6 +58,19 @@
     border-radius: 20%;
     margin-block-start: 15px;
     margin-inline-start: 15px;
+    cursor: pointer;
+}
+
+.meme-panel button:hover{
+    background-color: #ff80009a;
+}
+
+.meme-panel label{
+    cursor: pointer;
+}
+
+.meme-panel label img:hover{
+    background-color: #ff80009a;
 }
 
 .meme-page .user-color img {

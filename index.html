@@ -21,9 +21,9 @@
 
         <div class="main-screen" onclick="toggleMenu()"></div>
         <header class="header">
-            <div class="logo head-logo"><img src="images/meme-gene-logo.png" alt="MemeGen"></div>
+            <div class="logo head-logo"><img src="images/LOGO.png" alt="MemeGen"></div>
             <ul class="nav-bar clean-list">
-                <li href="#" onclick="init()">Gallery</li>
+                <li href="#" onclick="removeMenu()">Gallery</li>
                 <li href="#">Memes</li>
                 <li href="#">About</li>
             </ul>
@@ -39,8 +39,7 @@
                     <section class="img-filter">
                         <h2 data-trans="filter"></h2>
                         <section class="filter-header">
-                            <input onchange="onSetFilterBy(this.value)" class="searchText" type="text"
-                                placeholder="Enter Search">
+                            <input oninput="renderGallery()" class="search-text" type="text" placeholder="Enter Search">
                         </section>
                     </section>
 
@@ -59,12 +58,11 @@
                 <div class="canvas-container" hidden>
                     <canvas class="my-canvas" width="600px" height="600px"></canvas>
                 </div>
-
                 <!-- <section class="meme-container"> -->
                 <div class="meme-panel">
                     <div class="user-text">
                         <!-- TEXT -->
-                        <input type="text" class="canvas-text" onfocus="this.value" hidden />
+                        <input oninput="onSetLineTxt()" type="text" class="canvas-text" onfocus="this.value" hidden />
                     </div>
                     <div class="second-line">
                         <!-- LINE FOCUS -->
@@ -76,25 +74,55 @@
                     </div>
                     <!-- FONT -->
                     <div class="meme-font">
-                        <button class="increase-font" onclick="onIcreaseFont()"><img
-                                src="images/icons/increase font - icon.png"></button>
-                        <button class="decrease-font" onclick="onDecreaseFont()"><img
-                                src="images/icons/decrease font - icon.png"></button>
+                        <div class="meme-font-one">
+                            <button class="increase-font" onclick="onIcreaseFont()"><img
+                                    src="images/icons/increase font - icon.png"></button>
+                            <button class="decrease-font" onclick="onDecreaseFont()"><img
+                                    src="images/icons/decrease font - icon.png"></button>
+                        </div>
+                        <div class="meme-font-two">
+                            <button onclick="onSetAlignLeft()"><img src="images/icons/align-to-left.png" alt="">
+                            </button>
+                            <button onclick="onSetAlignCenter()"><img src="images/icons/center-text-alignment.png"
+                                    alt="">
+                            </button>
+                            <button onclick="onSetAlignRight()"><img src="images/icons/align-to-right.png" alt="">
+                            </button>
+                        </div>
                     </div>
                     <!-- COLOR -->
-                    <label class="user-color" for="user-color"><img
-                            src="images/icons/paint-board-and-brush.png"></label>
-                    <input hidden type="color" id="user-color" name="user-color" value="#ffffff">
+                    <div class="colors">
+                        <select onchange="onChangeFont()" name="font" id="font" class="font">
+                            <option value="Impact">Impact</option>
+                            <option value="Serif">Serif</option>
+                            <option value="Helvetica">Helvetica</option>
+                        </select>
+                        <button onclick="onSetStroke()"><img src="images/icons/text stroke.png"></button>
+                        <label class="user-color" for="user-color"><img
+                                src="images/icons/paint-board-and-brush.png"></label>
+                        <label class="user-color" for="user-color"></label>
+                        <input hidden onchange="onChangeColor()" type="color" id="user-color" name="user-color"
+                            value="#ffffff">
+                    </div>
                 </div>
-                <!-- </section> -->
 
-                <!-- MEME IMAGE -->
-                <div class="chosen-image"></div>
+                <div hidden class="saved">
+                    <button class="save btn hidden" onclick="saveToLocalStorage()">Save meme</button>
+                    <!-- <a class="download hidden" href="#" class="download" onclick="downloadMeme(this)"
+                        download="my-img.jpg">Download mem</a> -->
+                    <button class="facebook btn hidden" onclick="facebookShare()">Share meme</button>
+                </div>
+    
+            </section>
+            <!-- MEME IMAGE -->
+            <div class="chosen-image"></div>
+
+
         </main>
 
         <footer>
             <div class="footer-container">
-                <div class="logo footer-logo"><img src="images/meme-gene-logo.png" alt="MemeGen"></div>
+                <div class="logo footer-logo"><img src="images/LOGO.png" alt="MemeGen"></div>
                 <div class="rights">all rights reserved 2019</div>
             </div>
         </footer>
@@ -103,6 +131,8 @@
 
 
     <script src="js/utilities/utilities.js"></script>
+    <script src="js/services/local.storage.js"></script>
+    <script src="js/services/filterBy.js"></script>
     <script src="js/services/touch-events.js"></script>
     <script src="js/services/canvas.js"></script>
     <script src="js/services/meme.service.js"></script>

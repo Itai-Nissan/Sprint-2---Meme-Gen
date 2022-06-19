@@ -1,40 +1,147 @@
 var gCurrImgId
-var gUserColor
-// var gCurrLine = 1
 
-var gFontSize = 30
-var gUserFont = '' + gFontSize + 'px Impact' + ''
-var gUserFont2 = "30px Impcat";
+var gMeme = {
+    textOne: 'One does not simply write js',
+    textTwo: 'May the force be with you',
+
+    selectedImgId: 1,
+    selectedLineId: 1,
+
+    alignOne: 'center',
+    alignTwo: 'center',
+
+    colorOne: 'white',
+    colorTwo: 'white',
+
+    strokeOne: false,
+    strokeTwo: false,
+
+    fontSizeOne: 30,
+    fontSizeTwo: 30,
+
+    fontTypeOne: 'Impact',
+    fontTypeTwo: 'Impact',
+}
+
+// var gFontSize = 30
+var gUserFontOne = '' + gMeme.fontSizeOne + 'px ' + gMeme.fontTypeOne + ''
+var gUserFontTwo = '' + gMeme.fontSizeTwo + 'px ' + gMeme.fontTypeTwo + ''
+
+function renderCanvas() {
+    if (!gCtx) return
+    clearCanvas()
+
+    var elImg = document.getElementById(gMeme.selectedImgId)
+    gCtx.drawImage(elImg, 0, 0, gCanvas.width, gCanvas.height)
 
 
-function renderMeme(imgId) {
-    // gCurrImgId = imgId
-    // var elImg = document.getElementById(imgId)
-    // gCtx.drawImage(elImg, 0, 10, 270, 275.5)    
+    gCtx.lineWidth = 2
+
+    for (var i = 0; i < 2; i++) {
+        if (i === 0) {
+            gCtx.fillStyle = gMeme.colorOne
+            gCtx.font = gUserFontOne
+            gCtx.textAlign = gMeme.alignOne
+            gCtx.fillText(gMeme.textOne, 300, 45)
+            if (gMeme.strokeOne) gCtx.strokeText(gMeme.textOne, 300, 45)
+        }
+        else {
+            gCtx.fillStyle = gMeme.colorTwo
+            gCtx.font = gUserFontTwo
+            gCtx.textAlign = gMeme.alignTwo
+            gCtx.fillText(gMeme.textTwo, 300, 550)
+            if (gMeme.strokeTwo) gCtx.strokeText(gMeme.textTwo, 300, 550)
+        }
+    }
 
 }
 
-// function handleEnter(e) {
-//     var keyCode = e.keyCode;
-//     if (keyCode === 13) {
-//         drawText(this.value, parseInt(this.style.left, 10), parseInt(this.style.top, 10));
-//         document.body.removeChild(this);
-//         hasInput = false;
-//     }
-// }
+function onChangeFont() {
+    if (gMeme.selectedLineId === 1) {
+        gMeme.fontTypeOne = document.querySelector('.font').value
+        gUserFontOne = '' + gMeme.fontSizeOne + 'px ' + gMeme.fontTypeOne + ''
+    }
+    else {
+        gMeme.fontTypeTwo = document.querySelector('.font').value
+        gUserFontTwo = '' + gMeme.fontSizeTwo + 'px ' + gMeme.fontTypeTwo + ''
+    }
+    onSetLineTxt()
+}
 
 function onIcreaseFont() {
-    console.log(gFontSize);
-    // console.log(gUserFont);
-    gFontSize += 4
-    gUserFont = '' + gFontSize + 'px Impact' + ''
+    if (gMeme.selectedLineId === 1) {
+        gMeme.fontSizeOne++
+        gUserFontOne = '' + gMeme.fontSizeOne + 'px ' + gMeme.fontTypeOne + ''
+    }
+    else {
+        gMeme.fontSizeTwo++
+        gUserFontTwo = '' + gMeme.fontSizeTwo + 'px ' + gMeme.fontTypeTwo + ''
+    }
+    onSetLineTxt()
 }
 
 function onDecreaseFont() {
-    console.log(gFontSize);
-    // console.log(gUserFont);
-    gFontSize -= 4
-    gUserFont = '' + gFontSize + 'px Impact' + ''
+    if (gMeme.selectedLineId === 1) {
+        gMeme.fontSizeOne--
+        gUserFontOne = '' + gMeme.fontSizeOne + 'px ' + gMeme.fontTypeOne + ''
+    }
+    else {
+        gMeme.fontSizeTwo--
+        gUserFontTwo = '' + gMeme.fontSizeTwo + 'px ' + gMeme.fontTypeTwo + ''
+    }
+    onSetLineTxt()
+}
+
+function onSetAlignLeft() {
+    if (gMeme.selectedLineId === 1) {
+        gMeme.alignOne = 'right'
+    }
+    else gMeme.alignTwo = 'right'
+    onSetLineTxt()
+
+}
+
+function onSetAlignCenter() {
+    if (gMeme.selectedLineId === 1) {
+        gMeme.alignOne = 'center'
+    }
+    else gMeme.alignTwo = 'center'
+    onSetLineTxt()
+}
+
+function onSetAlignRight() {
+    if (gMeme.selectedLineId === 1) {
+        gMeme.alignOne = 'left'
+    }
+    else gMeme.alignTwo = 'left'
+    onSetLineTxt()
+
+}
+
+function onSetStroke() {
+    if (gMeme.selectedLineId === 1) {
+        if (gMeme.strokeOne === false) {
+            gMeme.strokeOne = true
+        }
+        else gMeme.strokeOne = false
+    }
+    if (gMeme.selectedLineId === 2) {
+        if (gMeme.strokeTwo === false) {
+            gMeme.strokeTwo = true
+        }
+        else gMeme.strokeTwo = false
+    }
+    onSetLineTxt()
+}
+
+function onChangeColor() {
+    userColor = document.getElementById('user-color').value
+    if (gMeme.selectedLineId === 1) {
+        gMeme.colorOne = userColor
+    }
+    else gMeme.colorTwo = userColor
+
+    onSetLineTxt()
 }
 
 function onLineFocus() {
@@ -56,19 +163,6 @@ function onLineFocus() {
 function onSetLineTxt() {
     const btn = document.querySelector('.set-line')
 
-    // btn.addEventListener('click', function handleClick(event) {
-    //     // 👇️ if you are submitting a form (prevents page reload)
-    //     event.preventDefault()
-
-    //     const canvasText = document.querySelector('.canvas-text')
-
-    //     // Send value to server
-    //     console.log(canvasText.value)
-
-    //     // 👇️ clear input field
-    //     canvasText.value = ''
-    // })
-
     var userText = getUserText()
 
     renderCanvas()
@@ -76,30 +170,23 @@ function onSetLineTxt() {
 }
 
 function onDeleteText() {
-    if (gMeme.selectedLineId === 1) gMeme.textOne = ''
-    if (gMeme.selectedLineId === 2) gMeme.textTwo = ''
+    if (gMeme.selectedLineId === 1) {
+        gMeme.textOne = ''
+    }
+    else gMeme.textTwo = ''
+
+
+    // if (gMeme.selectedLineId === 1) gMeme.textOne = ''
+    // if (gMeme.selectedLineId === 2) gMeme.textTwo = ''
     renderCanvas()
 }
 
-// var gLineOne
-// var gLineTwo
+function onChangeColor() {
+    userColor = document.getElementById('user-color').value
+    if (gMeme.selectedLineId === 1) {
+        gMeme.colorOne = userColor
+    }
+    else gMeme.colorTwo = userColor
 
-// var lineOnePos = (300 - (gMeme.textOne.length * 10), 45)
-// var lineTwoPos = (300 - (gMeme.textTwo.length * 10), 550)
-
-// // function createLines(pos) {
-//     gLineOne = {
-//         pos: lineOnePos,
-//         text: gMeme.textOne,
-//         size: 60,
-//         color: 'blue',
-//         isDrag: false
-//     }
-//     gLineTwo = {
-//         pos: lineTwoPos,
-//         text: gMeme.textTwo,
-//         size: 60,
-//         color: 'blue',
-//         isDrag: false
-//     }
-// // }
+    onSetLineTxt()
+}

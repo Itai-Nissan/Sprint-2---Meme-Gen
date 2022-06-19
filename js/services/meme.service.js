@@ -24,7 +24,6 @@ function toggleEditor(isShow) {
     elSetTxt.style.display = isShow ? 'block' : 'none'
 }
 
-
 function getUserText() {
     var elSetTxt = document.querySelector('.canvas-text');
     console.log(elSetTxt.value);

@@ -16,18 +16,12 @@ function init() {
     gCanvas = document.querySelector('canvas')
     gCtx = gCanvas.getContext('2d')
     renderGallery()
-
-    // addListeners()
-    // renderCanvas()
-    // addMouseListeners()
-    // addTouchListeners()
 }
 
 function onImgSelect(imgId) {
     toggleEditor(true)
     toggleGallery(false)
     setImg(imgId)
-    // renderMeme(imgId)
     renderCanvas(imgId)
     
 }
@@ -47,11 +41,6 @@ function onRateKeywords(ev) {
     elRateBtn.style.fontSize += gRateFontSize + 3 + 'px'
     gRateFontSize = elRateBtn.style.fontSize
 }
-
-// function onSearchText(inputText) {
-//     updateText(inputText, gMeme.id)
-//     renderCanvas()
-// }
 
 function updateText(inputText, memeId) {
     let meme = getMemeById(memeId)

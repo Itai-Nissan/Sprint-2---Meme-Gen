@@ -23,7 +23,6 @@ var gMeme = {
     fontTypeTwo: 'Impact',
 }
 
-// var gFontSize = 30
 var gUserFontOne = '' + gMeme.fontSizeOne + 'px ' + gMeme.fontTypeOne + ''
 var gUserFontTwo = '' + gMeme.fontSizeTwo + 'px ' + gMeme.fontTypeTwo + ''
 
@@ -146,7 +145,6 @@ function onChangeColor() {
 
 function onLineFocus() {
     console.log(gMeme.selectedLineId)
-    // gCurrLine = gMeme.selectedLineId
     if (gMeme.selectedLineId === 1) {
         gMeme.selectedLineId = 2
         console.log(gMeme.selectedLineId);
@@ -162,11 +160,9 @@ function onLineFocus() {
 
 function onSetLineTxt() {
     const btn = document.querySelector('.set-line')
-
     var userText = getUserText()
 
     renderCanvas()
-    // renderMeme()
 }
 
 function onDeleteText() {
@@ -175,9 +171,6 @@ function onDeleteText() {
     }
     else gMeme.textTwo = ''
 
-
-    // if (gMeme.selectedLineId === 1) gMeme.textOne = ''
-    // if (gMeme.selectedLineId === 2) gMeme.textTwo = ''
     renderCanvas()
 }
 

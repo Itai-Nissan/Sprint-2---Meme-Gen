@@ -137,7 +137,6 @@
         flex-direction: column;
         align-items: center;
         margin-inline-start: 30px;
-        /* margin-block-end: 16px; */
     }
 
     .meme-font{
@@ -164,7 +163,6 @@
         padding: 3px;
     }
 }
-
 
 /* FULL SCREEN */
 @media (min-width: 1300px) {

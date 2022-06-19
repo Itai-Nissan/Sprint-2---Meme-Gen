@@ -49,17 +49,17 @@ var gImgs = [
     {
         id: 10,
         url: 'images/10.jpg',
-        keywords: ['laugh', 'baby']
+        keywords: ['house', 'glass']
     },
     {
         id: 11,
         url: 'images/11.jpg',
-        keywords: ['laugh', 'baby']
+        keywords: ['love', 'fight']
     },
     {
         id: 12,
         url: 'images/12.jpg',
-        keywords: ['laugh', 'baby']
+        keywords: ['glasses', 'sky']
     },
     {
         id: 13,
@@ -69,12 +69,12 @@ var gImgs = [
     {
         id: 14,
         url: 'images/14.jpg',
-        keywords: ['laugh', 'baby']
+        keywords: ['glasses', 'baby']
     },
     {
         id: 15,
         url: 'images/15.jpg',
-        keywords: ['laugh', 'baby']
+        keywords: ['ocean', 'road']
     },
     {
         id: 16,
@@ -84,12 +84,12 @@ var gImgs = [
     {
         id: 17,
         url: 'images/17.jpg',
-        keywords: ['laugh', 'baby']
+        keywords: ['water', 'bike']
     },
     {
         id: 18,
         url: 'images/18.jpg',
-        keywords: ['laugh', 'baby']
+        keywords: ['tow', 'cartoon']
     },
 ]
 

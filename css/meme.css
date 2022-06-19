@@ -28,12 +28,6 @@
     background-color: #ff80009a;
 }
 
-.search-text{
-    background: url(/images/icons/search-icon.png) no-repeat scroll 7px 7px;
-    background-size: 8%;
-    padding-left:30px;
-}
-
 .meme-font{
     display: flex;
     justify-content: center;
@@ -88,7 +82,6 @@
     width: 100%;
     padding: 3px;
 }
-
 
 .canvas-text {
     text-decoration: none;
